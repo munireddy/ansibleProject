@@ -12,8 +12,9 @@
     become: yes
     command: ls
     register: lsoutput    
-  - debug:
-      msg: "{{ lsoutput.stdout }}"
+  - name: Update system
+    become: yes
+    command: apt update    
     #  - name: Install gcc 
     #stat:
     #  path: /etc/hostsMUni
